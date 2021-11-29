@@ -34,11 +34,9 @@ export const GlobalStyle = createGlobalStyle`
     }
     :root{
         --primary-color-main: #273335;
-        --primary-color-light: #286874
-        --dark-green: #79A860;
-        --light-green: #D0F5BC;
-        --purple: #A871A8;
-        --pink: #F5BDF5;
+        --primary-color-light: #286874;
+        --secundary-color-main: #5F8140;
+        --secundary-color-light: #6DA938;
     }
 
     body {

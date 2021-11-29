@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
 
   a {
-    background-color: #273335;
+    background-color: var(--primary-color-main);
     width: 210px;
     color: white;
     margin: 5px;
@@ -22,9 +22,18 @@ export const Container = styled.div`
     padding: 10px;
     justify-content: center;
     border-radius: 10px;
-    box-shadow: inset -2px -2px 8px 1px #286874;
+    box-shadow: inset -2px -2px 8px 1px var(--primary-color-light);
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background-color: var(--secundary-color-main);
+      box-shadow: var(--secundary-color-light);
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1);
+    }
   }
-
   @media (min-width: 800px) {
     & {
       justify-content: flex-start;

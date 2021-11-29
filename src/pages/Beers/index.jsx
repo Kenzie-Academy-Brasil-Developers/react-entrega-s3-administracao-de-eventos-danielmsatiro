@@ -2,6 +2,8 @@ import { useBeers } from "../../providers/beers";
 import { useWedding } from "../../providers/wedding";
 import { useGraduation } from "../../providers/graduation";
 import { useConfraternization } from "../../providers/confraternization";
+import { Card } from "../../components/Card/style";
+import { Container } from "../../components/Container/style";
 
 export const Beers = () => {
   const { beers } = useBeers();
@@ -18,11 +20,18 @@ export const Beers = () => {
   };
 
   return (
-    <div>
+    <Container>
       <ul>
         {beers.map((beer) => (
-          <li key={beer.id}>
+          <Card key={beer.id}>
+            <img src={beer.image_url} alt="beer.name" />
             <h2>{beer.name}</h2>
+            <h3>Fabricação: {beer.first_brewed}</h3>
+            <p>{beer.description}</p>
+            <span>
+              {beer.volume.value} {beer.volume.unit}
+            </span>
+
             <button onClick={() => handleToEvent(beer, wedding, addToWedding)}>
               Lista de Wedding
             </button>
@@ -38,9 +47,9 @@ export const Beers = () => {
             >
               Lista de Confraternization
             </button>
-          </li>
+          </Card>
         ))}
       </ul>
-    </div>
+    </Container>
   );
 };
